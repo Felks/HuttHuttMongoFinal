@@ -1,9 +1,14 @@
 HuttHutt::Application.routes.draw do
+  devise_for :members
+  root to: 'products#index'
+  resources :products
+  
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
-  root to: 'products#index'
-  resources :products
+  
+  
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
