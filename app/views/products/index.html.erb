@@ -1,0 +1,19 @@
+</br>
+<h1>All Products for Sale</h1>
+
+
+
+<ul class='list-group'>
+<% @products.each do |product| %>
+  <li class='list-group-item'><%= product.pname %> <%= product.pdescription %> <%= product.price %>
+  <%= link_to "Delete", product, method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" %>
+   <%= link_to "Show", product, class: "pull-right" %>
+    <%= link_to "Edit", edit_product_path(product), class: "pull-right" %>
+<% end %>
+</ul>
+
+
+
+<br>
+
+<%= link_to "New Product", new_product_path, class: "btn btn-primary" %>
