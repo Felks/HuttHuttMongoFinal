@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   def create
   	member = Member.where(:email => params[:email]).first
   	if member && member.authenticate(params[:password])
-
   	session[:member_id] = member.id 
   	redirect_to '/'
   else
